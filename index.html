@@ -34,6 +34,10 @@
             display: flex;
             padding: 50px 20px;
         }
+/* 
+        .item{
+            height: 90%;
+        } */
 
         .card {
             -webkit-transition: all 0.2s ease-in;
@@ -43,6 +47,8 @@
             border-radius: 5px;
             box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.40);
             transition: all 0.2s ease-in;
+            height: 100%;
+            width: 100%;
         }
 
         .card:hover {
@@ -58,6 +64,7 @@
             border-radius: 5px;
             box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.50);
             overflow: hidden;
+            height: 100%;
         }
 
         .card .image-box img {
@@ -65,6 +72,8 @@
             -moz-transition: all .9s ease;
             -o-transition: all .9s ease;
             -ms-transition: all .9s ease;
+            vertical-align: middle;
+            height: 100%;
         }
 
         .card:hover .image-box img {
@@ -79,6 +88,8 @@
             border-radius: 5px;
             color: var(--primary-color);
             padding: 20px;
+            width: 100%;
+            height: 40%;
         }
 
         footer {
@@ -94,14 +105,12 @@
 <body>
     <header>
         <h1>Women Who Code's Days of Code Challenge 2024</h1>
-        <!-- <h2>Title 2</h2>
-        <h3>Title 3</h3> -->
     </header>
 
     <main>
         <div id="project-container">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                <div class="col">
+                <div class="col item">
                     <a href="./01 - JavaScript Drum Kit/" target="_blank">
                         <div class="card h-100 mb-3">
                             <div class="image-box">
@@ -113,7 +122,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col">
+                <div class="col item">
                     <a href="./02 - JS and CSS Clock/" target="_blank">
                         <div class="card h-100 mb-3">
                             <div class="image-box">
@@ -125,7 +134,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col">
+                <div class="col item">
                     <a href="./03 - CSS Variables/" target="_blank">
                         <div class="card h-100 mb-3">
                             <div class="image-box">
@@ -461,7 +470,6 @@
                         </div>
                     </a>
                 </div> 
-            </div>
         </div>
     </main>
 
