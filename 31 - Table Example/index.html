@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>Head</head>
+    <body>Body</body>
+    <div>
+        <span>project-container</span>
+        <table id="table">
+           
+        </table>
+    </div>
+    <style>
+        table th {
+            border: 1px solid black;
+        }
+        table td {
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        let raw = '/Company/Contact/Country\n/Alfreds Futterkiste /Maria Anders /Germany\n/Centro comercial Moctezuma /Francisco /Chang Mexico';
+        let rows = raw.split('\n');
+        console.log(rows);
+        let table = document.getElementById("table");
+        for (let index = 0; index < rows.length; index++) {
+        
+           let element = document.createElement("tr");
+          let row1= table.insertRow(index);
+
+           let content = rows[index].split('/');
+           let innerHTML ='';
+
+           for (let j = 1; j < content.length; j++) {
+                innerHTML += (index == 0) ? `<th class='header'>${content[j]}</th>` : `<td>${content[j]}</td>`;
+                // row1.insertCell(j-1).innerHTML = `${content[j]}` ;
+           }
+
+           element.innerHTML = innerHTML;
+        //    document.appendChild(table);
+           document.querySelector('tbody').appendChild(element);
+           console.log(element);
+     
+        }
+    </script>
+</html>
