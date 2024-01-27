@@ -54,6 +54,10 @@ body {
   max-width: 50px;
 }
 
+.display {
+  display: none;
+}
+
 .player__button:focus {
   border-color: #ffc600;
 }
