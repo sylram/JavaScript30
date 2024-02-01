@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Reference VS Copy</title>
+  <link rel="icon" href="https://fav.farm/🔥" />
+</head>
+<body>
+
+  <script>
+    // start with strings, numbers and booleans
+    let str = "string1"
+    let str2 = str;
+    console.log(str,str2);
+    str = "string2";
+    console.log(str,str2);
+    str2 = "modified";
+    console.log(str,str2);
+
+    // Let's say we have an array. If you update an array it will modify the original if it is a reference
+    const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
+    const team = players;
+    console.log(players, team);
+    // however what happens when we update that array? now here is the problem!
+    // Why? It's because that is an array reference, not an array copy. They both point to the same array!
+    team[3] = 'test';
+    console.log(players, team);
+
+    //slice will copy the array or string // and we want to make a copy of it.
+    const team2 = players.slice(); 
+    // or use the new ES6 Spread
+    const playersCopy = [...players];
+    playersCopy[2] = 'playerx'
+    const playersCopy2 = [].concat(players);
+    console.log(players, team, team2, playersCopy);
+    // now when we update it, the original one isn't changed
+
+    // The same thing goes for objects, let's say we have a person object
+    // with Objects
+    const person = {
+      name: 'Wes Bos',
+      age: 80
+    };
+
+    // and think we make a copy:
+    const personCopy = person;
+    personCopy.name = 'newName';
+    console.log(person, personCopy);
+    // how do we take a copy instead?
+    const objCopy = {...person};
+    const copy2 = Object.assign({}, person, {number: 99})
+    objCopy.name = "Jason";
+    console.log(person, objCopy, copy2);
+    // We will hopefully soon see the object ...spread
+
+    // Things to note - this is only 1 level deep - both for Arrays and Objects. lodash has a cloneDeep method, but you should think twice before using it.
+    const wesProfile = { 
+      name: 'Wes', 
+      age: 55, 
+      social: { 
+        fb: 'fbPerson', 
+        twitter: '@wes' 
+      }
+    }
+
+    const copyWesProf = {...wesProfile};
+    copyWesProf.social.instagram = 'instProf';
+    //It modifies both 
+    console.log(wesProfile, copyWesProf);
+    const cloneWesProfile = JSON.parse(JSON.stringify(wesProfile));
+    cloneWesProfile.social.tiktok = 'tiktok';
+    console.log(wesProfile, cloneWesProfile);
+    //But there is an issue with this method. The issue is that you can lose your data. How?
+    //JSON.stringify() works very well with primitive data types like numbers, strings, or Booleans, and that is what you have seen in our previous examples. 
+    //But sometimes, JSON.stringify() is unpredictable if you are not aware of some values and how it handles them.
+    //For example, it does not work with functions, symbols, or undefined values. It also changes other values like Nan and Infinity to null, breaking your code. 
+    //When you have a function, symbol, or undefined value, it will return an empty key-value pair and skip it.
+    const userDetails = {
+      name: "John Doe",
+      age: 14,
+      status: {
+        verified: false,
+        method: Symbol(),
+        title: undefined
+      }
+    };
+
+  // Cloning the Object with Spread Operator
+  let cloneUser = JSON.parse(JSON.stringify(userDetails));
+  console.log(cloneUser); 
+
+  /* Output
+  {
+    name: "John Doe",
+    age: 14,
+    status: {
+      verified: false
+    }
+  };*/
+  </script>
+
+</body>
+</html>
