@@ -44,6 +44,31 @@
   </div>
 
   <script>
+
+    const slideinImages = document.querySelectorAll('.slide-in');
+    window.addEventListener('scroll', debounce(checkSlide));
+    // slideinImages.forEach(image => (){
+    //   image.sty
+    // })
+
+    function checkSlide(e){
+      slideinImages.forEach(img => {
+        //half way through the image
+        const slideInt = (window.scrollY + window.innerHeight) - img.height/2;
+        console.log(slideInt);
+        //bottom of the image
+        const imageBotton = img.offsetTop + img.height;
+        const isHalfShown = slideInt > img.offsetTop;
+        const isNotScrolledPast = window.scrollY < imageBotton;
+        if(isHalfShown && isNotScrolledPast){
+          img.classList.add('active');
+        } else {
+          img.classList.remove('active');
+        }
+    });
+
+    }
+
     function debounce(func, wait = 20, immediate = true) {
       var timeout;
       return function() {
@@ -64,7 +89,7 @@
   <style>
     html {
       box-sizing: border-box;
-      background: #ffc600;
+      background: black;
       font-family: 'helvetica neue';
       font-size: 20px;
       font-weight: 200;
