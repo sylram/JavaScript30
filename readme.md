@@ -16,4 +16,9 @@ This Repository Documents a 30 days JavaScript challenge where I will be buildin
 | 9   | Dev Tools Domination | https://sylram.github.io/JavaScript30/09%20-%20Dev%20Tools%20Domination/               |
 | 10  | Hold Shift to Select | https://sylram.github.io/JavaScript30/10%20-%20Hold%20Shift%20and%20Check%20Checkboxes/|
 | 11  | Custom Video Player  | https://sylram.github.io/JavaScript30/11%20-%20Custom%20Video%20Player/                |
+| 12  | Key Sequence         | https://sylram.github.io/JavaScript30/12%20-%20Key%20Sequence%20Detection/             |
+| 13  | Slide in on Scroll   | https://sylram.github.io/JavaScript30/13%20-%20Slide%20in%20on%20Scroll/               |
+| 14  | JavaScript References| https://sylram.github.io/JavaScript30/14%20-%20JavaScript%20References%20VS%20Copying/ |
+| 15  | LocalStorage         | https://sylram.github.io/JavaScript30/15%20-%20LocalStorage/                           |
+| 16  | Mouse Move Shadow    | https://sylram.github.io/JavaScript30/16%20-%20Mouse%20Move%20Shadow/                  |
 
