@@ -49,6 +49,23 @@
 <script>
 const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
 
+const sortedBands = bands.sort((a , b) => strip(a) < strip(b) ? -1 : 1);
+
+function strip(bandName){
+ return bandName.replace(/^(a |an |the)/i, '').trim();
+}
+
+function getName(str){
+  let strSplit = str.split(" ");
+  if(strSplit [0] == 'A' || strSplit [0] == 'An' || strSplit [0] == 'The' ) {
+    return  strSplit [1];
+  }
+  return strSplit [0]
+}
+
+document.querySelector('#bands').innerHTML = sortedBands.map(band =>
+`<li>${band}</li>`
+).join('');
 
 </script>
 
