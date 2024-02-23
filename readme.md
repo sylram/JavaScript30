@@ -21,4 +21,6 @@ This Repository Documents a 30 days JavaScript challenge where I will be buildin
 | 14  | JavaScript References| https://sylram.github.io/JavaScript30/14%20-%20JavaScript%20References%20VS%20Copying/ |
 | 15  | LocalStorage         | https://sylram.github.io/JavaScript30/15%20-%20LocalStorage/                           |
 | 16  | Mouse Move Shadow    | https://sylram.github.io/JavaScript30/16%20-%20Mouse%20Move%20Shadow/                  |
+| 17  | Sort Without Articles| https://sylram.github.io/JavaScript30/17%20-%20Sort%20Without%20Articles/              |
+| 18  | Adding Up with reduce| https://sylram.github.io/JavaScript30/18%20-%20Adding%20Up%20Times%20with%20Reduce/    |
 
