@@ -35,6 +35,7 @@ html {
   top: 20px;
   right: 20px;
   width:200px;
+  transform: rotateY(180deg);
 }
 
 /*
